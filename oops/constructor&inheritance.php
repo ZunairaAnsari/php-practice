@@ -67,3 +67,36 @@ $product1 = new product('iPhone 12....', 'This is a great iPhone ', 799.99);
 $product2 = new product('iPhone 10.....', 'This is also a great iPhone ', 599.99);
 $product1->show2();
 $product2->show2();
+
+class Sum {
+    public $a;
+    public $b;
+
+    function __construct($a, $b) {
+        $this->a = $a;
+        $this->b = $b;
+    }
+
+    function add() {
+        echo "This is the result of sum: " . ($this->a + $this->b) . "\n";
+    }
+}
+
+class Sub extends Sum {
+    function __construct($a, $b) {
+        parent::__construct($a, $b);
+    }
+
+    function subtract() {
+        echo "This is the result of subtraction: " . ($this->a - $this->b) . "\n";
+    }
+}
+
+$num1 = new Sum(20, 20);
+$num1->add();
+
+$num2 = new Sub(10, 5);
+$num2->subtract();
+
+
+?>
