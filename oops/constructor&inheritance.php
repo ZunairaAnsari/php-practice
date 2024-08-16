@@ -98,5 +98,44 @@ $num1->add();
 $num2 = new Sub(10, 5);
 $num2->subtract();
 
+class employee {
+    public $name;
+    public $salary;
+
+    function __construct($n, $s) {
+        $this->name = $n;
+        $this->salary = $s;
+    }
+
+    function info() {
+        echo "<h3>This is parent constructor with somehow extended class</h3>";
+        echo $this->name . "\n";
+        echo $this->salary;
+    }
+}
+
+class manager extends employee {
+    function __construct($n, $s) {
+        // Call the parent constructor
+        parent::__construct($n, $s);
+    }
+
+    function info() {
+        $incentive = 1000;
+        // Calculate the total salary including the incentive
+        $managerSalary = $this->salary + $incentive;
+        echo "<h3>This is manager constructor with overriding properties</h3>";
+        echo $this->name . "\n";
+        echo $managerSalary;
+    }
+}
+
+// Create an employee object
+$e1 = new employee("armeen", 1000);
+$e1->info();
+
+// Create a manager object
+$m1 = new manager("neha", 25000);
+$m1->info();
 
 ?>
