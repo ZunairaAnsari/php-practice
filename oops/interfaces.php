@@ -1,4 +1,6 @@
 <?php
+echo "<h1>Interfaces</h1>";
+
 
 interface Admin {
     public function leaves($days, $attendance);
