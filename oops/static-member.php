@@ -74,5 +74,26 @@ class derived extends basic{
 
 $test = new derived();
 $test->show();
- 
+echo "<br />";
+class Domain {
+    protected static function getWebName() {
+        return "w3schools";
+    }
+}
+
+class SubDomain extends Domain {
+    public $webName;
+
+    public function __construct() {
+        $this->webName = parent::getWebName(); 
+    }
+}
+
+// Instantiate the SubDomain class
+$subDomain = new SubDomain();
+
+// Access the webName property correctly
+echo $subDomain->webName;
+
+
 ?>
