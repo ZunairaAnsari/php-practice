@@ -13,7 +13,22 @@ class child extends main{
 
 $obj = new child();
 $obj->show();
+echo "<br />";
+// static-member
 
-
+class Fruits {
+    public static function countQuantity(){
+        return 10;
+    }
+}
+class Vege extends Fruits{
+    public $quantity;
+    public function __construct()
+    {
+      $this->quantity = parent::countQuantity();
+    }       
+}
+$veg = new Vege();
+echo $veg->quantity;
 
 ?>
