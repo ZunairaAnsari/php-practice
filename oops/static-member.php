@@ -43,5 +43,36 @@ echo "<h4>Static Members-Base Class</h4>";
  }
 
  Base::count(1000, 25);
+echo "<h4>Static Members-Class with constructor function</h4>";
+
+class school{
+    public static $role = "teacher";
+    public static function print(){
+        echo self::$role;
+    }
+
+    public function __construct($r)
+    {
+       self::$role = $r;
+    }
+
+}
+
+$s1 = new school("admin");
+$s1->print();
+
+echo "<hr />";
+
+class basic{
+    public static $level = "beginer";
+}
+class derived extends basic{
+    public static function show(){
+        echo  parent::$level;
+    }
+}
+
+$test = new derived();
+$test->show();
  
 ?>
